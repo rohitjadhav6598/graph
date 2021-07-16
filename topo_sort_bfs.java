@@ -1,9 +1,6 @@
 class Solution{
 	public int[] topoBfs(int V, ArrayList<Arraylist<Integer>> adj){
 		int Indegree[] = new int[V];
-		for(int i=0;i<V;i++){
-			inDegree[i]=0;
-		}
 		
 		for(int i=0;i<V;i++){
 			for(Integer it:adj.get(i)) indegree[it]++;
@@ -18,7 +15,7 @@ class Solution{
 		while(!q.isEmpty()){
 			int n=q.poll();
 			res[ind++]=n;
-			for(Integer it:adj.get(i)){
+			for(Integer it:adj.get(n)){
 				inDegree[it]--;
 				if(inDegree[it]==0) q.add(it);
 			}
